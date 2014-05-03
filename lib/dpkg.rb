@@ -1,4 +1,3 @@
-require 'dpkg/ar'
 require 'dpkg/package'
 require 'dpkg/control'
 

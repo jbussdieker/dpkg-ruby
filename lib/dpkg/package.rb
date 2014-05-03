@@ -1,5 +1,6 @@
 require 'rubygems/package'
 require 'zlib'
+require 'archive/ar'
 
 module DPKG
   class Package
@@ -8,10 +9,11 @@ module DPKG
     end
 
     def read_control_tar_gz
-      ar = AR.new(@filename)
-      data = ar.files
-      target = data.find {|item| item[:name] == "control.tar.gz"}
-      ar.read(target)
+      Archive::Ar.traverse(@filename) do |header, data|
+        if header[:name] == "control.tar.gz"
+          return data
+        end
+      end
     end
 
     def ungzip(data)
