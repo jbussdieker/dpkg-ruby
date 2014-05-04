@@ -1,6 +1,7 @@
 require 'rubygems/package'
 require 'zlib'
 require 'archive/ar'
+require 'stringio'
 
 module DPKG
   class Package

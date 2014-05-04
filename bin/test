@@ -6,6 +6,5 @@ raise "Must specify package" unless ARGV.length > 0
 ARGV.each do |file|
   package = DPKG.new(file)
   control = package.control
-  puts control.name
-  puts control.version
+  puts [File.basename(file), control.name, control.version].reverse.join("\t")
 end

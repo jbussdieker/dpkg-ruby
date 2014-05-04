@@ -7,7 +7,7 @@ PATH
 GEM
   remote: https://rubygems.org/
   specs:
-    archive-ar (0.0.1)
+    archive-ar (0.0.4)
     diff-lcs (1.2.5)
     rspec (2.14.1)
       rspec-core (~> 2.14.0)
